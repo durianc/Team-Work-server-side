@@ -9,17 +9,21 @@ with open('./static/index.html', 'rb') as fp:
 
 house = {}
 
+# 增加一个列表用于存储房间号
+rooms = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 @app.route('/')
 def index(request):
     return file('static/index.html')
 
-
-@app.websocket('/game/<room_id>')
+@app.websocket('/game/<int:room_id>')
 def game(request, ws, room_id):
     user_id = request.args.get('id')
 
     if not user_id:
+        return
+
+    if room_id not in rooms:
         return
 
     if room_id not in house:
@@ -79,4 +83,4 @@ def game(request, ws, room_id):
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=60001)
+    app.run(host='10.133.18.99', port=60001,debug=True)
