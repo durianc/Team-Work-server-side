@@ -1,5 +1,5 @@
 # Team-Work-server-side 软工小组后端
-##### 目前还未实现联机，只可用本地Web服务器运行webgl
+##### 目前还未实现联机，可用本地Web服务器运行webgl，并与前端互发消息
 ## main.py后端Web服务器代码，采用Sanic框架
 ----
 ## 运行说明：
