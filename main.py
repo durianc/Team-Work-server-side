@@ -1,4 +1,4 @@
-from sanic import Sanic, response
+from sanic import Sanic
 from sanic.response import file
 from collections import defaultdict
 import json
@@ -87,7 +87,7 @@ async def game(request, ws, room_id=None):
 
 # 运行服务端
 if __name__ == '__main__':
-    app.run(host='172.20.10.3', port=60001,debug=True)
+    app.run(host='10.133.42.136', port=60001,debug=True)
 
 # 启用单进程模式后，你可以更容易地查看任何启动错误，因为所有错误都将直接输出到控制台
 # if __name__ == '__main__':
